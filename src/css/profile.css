@@ -1,0 +1,329 @@
+body.no-scroll {
+  overflow: hidden;
+}
+
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+.repoback{
+  padding:15px;
+  background-color: white;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+.sidebar {
+  width: 250px;
+  background: white;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 100vh;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.sidebar-header {
+  /* display: inline; */
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: flex-start;
+  /* align-items: center; */
+  gap: 12px;
+  /* margin-bottom: 24px; */
+}
+
+.logo {
+  
+  width: 28.5px;
+  height: 32px;
+}
+
+.logo-container h1 {
+  margin-top: -45px;
+  margin-left: 40px;
+  
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.user-button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.nav-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter';
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #0066ff;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.repositories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.title-section h1 {
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.repo-count {
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #414651;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.refresh-button,
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 20px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+}
+
+.refresh-button {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  color: #1a1a1a;
+}
+
+.add-button {
+  background-color: #0066ff;
+  color: white;
+}
+
+.search-container {
+  margin-bottom: 24px;
+  max-width:350px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.close-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+    width: 280px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar.open + .overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: white;
+    margin: -24px -24px 24px -24px;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-logo h1 {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+
+  .close-button {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #1a1a1a;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+
+  .repositories-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .action-buttons {
+    width: 100%;
+  }
+
+  .refresh-button,
+  .add-button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .title-section {
+    width: 100%;
+  }
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 10px;
+  margin-bottom:  25px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 10px 10px 35px; /* Add padding to avoid overlap with the icon */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}

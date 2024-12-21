@@ -1,0 +1,180 @@
+.stat-card {
+  position: relative;
+  background: #FFFFFF;
+  margin-top: -140px;
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  height: 150px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.stat-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.stat-header h3 {
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 27px;
+}
+
+.stat-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-value {
+  font-size: 18px;
+  font-family: 'Inter';
+  font-weight: 600;
+  color: #111827;
+  line-height: 1;
+}
+
+.metric-label {
+  font-family: 'Inter';
+  font-size: 16px;
+  color: #6B7280;
+}
+
+.issues-card {
+  position: absolute;
+  bottom: -130px;
+  right: 32px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 180px;
+}
+
+.issues-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.issues-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.issues-icon {
+  width: 48px;
+  height: 48px;
+  background: #EEF2FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.trend-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #184fa3;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trend-arrow {
+  font-size: 16px;
+}
+
+.issues-period {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 12px;
+  color: #6B7280;
+  margin-top: 4px;
+}
+
+.issues-bottom-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.issues-label {
+  font-family: 'Inter';
+  font-size: 16px;
+  color: #111827;
+}
+
+.issues-value {
+  font-family: 'Inter';
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 32px;
+}
+
+@media (max-width: 640px) {
+  .stat-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .stat-header {
+    margin-bottom: 32px;
+  }
+
+  .stat-header h3 {
+    font-size: 20px;
+  }
+
+  .stat-metrics {
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .metric-value {
+    font-size: 28px;
+  }
+
+  .issues-card {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 24px;
+    width: 100%;
+  }
+}
+

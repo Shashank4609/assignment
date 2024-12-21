@@ -1,0 +1,89 @@
+.repository-list {
+  display: flex;
+  flex-direction: column;
+  margin: -15px;
+  /* gap: 12px; */
+}
+
+.repository-item {
+  background: white;
+  border: 1px solid #e9ecef;
+  /* border-radius: 8px; */
+  padding: 16px;
+  
+}
+
+.repository-item:hover{
+  background-color: #e1e3e6;
+}
+
+.repository-header {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+
+
+.repository-name {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #181d27;
+  margin: 0;
+}
+
+.visibility-badge {  
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
+.visibility-badge {
+  background-color: #e8f2ff;
+  color: #0066ff;
+}
+
+
+
+.repository-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0066ff;
+}
+
+@media (max-width: 768px) {
+  .repository-item {
+    padding: 12px;
+  }
+
+  .repository-details {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
